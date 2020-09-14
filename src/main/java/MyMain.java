@@ -19,7 +19,7 @@ public class MyMain {
     public static double factorial(int x) {
         // REPLACE WITH YOUR CODE HERE
         int fact = 1;
-        for(int i = x; i>1; i--)
+        for(int i = x; i>=1; i--)
         {
             fact*=i;
         }
@@ -31,11 +31,13 @@ public class MyMain {
     // different from the value Math.E
     public static double calculateE() {
         // REPLACE WITH YOUR CODE HERE
-        int i=0;
-        double E = 0;
-        while(Math.abs(E - Math.E)>0.00000000001)
+        int i=1;
+        double E = 1;
+        while(Math.E - E > 0.00000000001)
         {
-            E += 1/factorial(i);
+            E += (1/factorial(i));
+            i++;
+            System.out.println(E);
         }
         return E;
     }
@@ -50,7 +52,10 @@ public class MyMain {
         System.out.println("Enter a positive int");
         int b = scan.nextInt();
         System.out.println(factorial(b));
-        System.out.println(calculateE());        
+        System.out.println("Enter a positive int");
+        int c = scan.nextInt();
+        System.out.println(calculateE()); 
+        System.out.println(Math.E);       
 
         scan.close();
     }
